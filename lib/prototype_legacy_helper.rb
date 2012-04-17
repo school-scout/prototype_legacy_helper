@@ -175,7 +175,9 @@ module PrototypeHelper
   #     { :update => "posts", :url => { :action => "destroy", :id => post.id } },
   #     :href => url_for(:action => "destroy", :id => post.id)
   def link_to_remote(name, options = {}, html_options = nil)
-    link_to_function(name, remote_function(options), html_options || options.delete(:html))
+    # link_to_remote will escape function -- don't doubly escape
+    function = remote_function(options).gsub(/&amp;/, '&')
+    link_to_function(name, function, html_options || options.delete(:html))
   end
 
   # Returns a form tag that will submit using XMLHttpRequest in the
