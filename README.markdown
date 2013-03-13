@@ -1,6 +1,6 @@
 # Prototype Legacy Helper
 
-This plugin adds support for `form_remote_tag`, etc from Rails 2 to Rails 3.
+This plugin adds support for `form_remote_tag`, etc from Rails 2 to Rails 3.1.
 
 ## Installation
 
