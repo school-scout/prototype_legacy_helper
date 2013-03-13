@@ -174,7 +174,7 @@ module PrototypeHelper
   #   link_to_remote "Delete this post",
   #     { :update => "posts", :url => { :action => "destroy", :id => post.id } },
   #     :href => url_for(:action => "destroy", :id => post.id)
-  def link_to_remote(name, options = {}, html_options = nil)
+  def link_to_remote(name, options = {}, html_options = {})
     # link_to_remote will escape function -- don't doubly escape
     function = remote_function(options).gsub(/&amp;/, '&')
     link_to_function(name, function, html_options || options.delete(:html))
